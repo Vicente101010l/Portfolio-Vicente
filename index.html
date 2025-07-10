@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Vicente Mota</title>
+  <style>
+
+@font-face {
+    font-family: Jost;
+    src: url('fontes/Jost.ttf') format('truetype');
+    
+}
+
+    body {
+      margin: 0;
+      font-family:Jost;
+      line-height: 1.6;
+      color: #fff;
+      background: linear-gradient(to bottom, #000000, #00233a);
+    }
+    header {
+       
+    
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+      border-radius: 2% ;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      
+    }
+
+    h2{
+      color: #a4e4fa;
+    }
+
+    section p{
+font-size: 1.2rem;
+    }
+    .projects {
+     display: flex;
+  flex-direction: column;
+      gap: 20px;
+    }
+    .project {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* espaço entre vídeo e texto */
+  padding: 20px;
+  color: #00233a;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+   background: linear-gradient(to bottom, #a4e4fa, #ffffff);
+  align-items: flex-start; /* alinha topo do vídeo e texto */
+}
+    
+    .project img, .project video{
+      width: 90%;
+        border-radius: 30px;
+  flex-shrink: 0; /* impede que o vídeo diminua */
+    display: block;
+  margin: 0 auto;
+    }
+    
+.project > div {
+  flex: 1; /* faz o texto ocupar o espaço restante */
+}
+
+
+.project h3,
+.project p {
+
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: left; 
+}
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+.carousel {
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: 8px;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #00233a ;
+  width: 40px;
+  height: 40px;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+}
+.carousel button:hover{
+  transform: scale(1.2rem);
+  background-color: #00233a(0,0,0,0.5) ;
+}
+
+.carousel button.prev {
+  left: 10px;
+}
+
+.carousel button.next {
+  right: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vicente Mota Portfólio</h1>
+    <p>Desenvolvedor | Designer | 3D | Projetos Interativos  </p>
+  </header>
+
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+     <div style="overflow: hidden;">
+    <img src="img/vicente4.jpg" alt="Vicente Mota" style="
+      float: left;
+      width: 400px;
+       height: 250px;
+      object-fit: cover;
+      margin-right: 20px;
+      border-radius: 10px;
+    ">
+    <p style="margin-top: 0;">Sou um designer dedicado à criação de experiências web interativas, ambientes 3D imersivos e interfaces baseadas em jogos. 
+      <p>O meu trabalho foca-se na convergência entre programação, criatividade e interação do utilizador, com o objetivo de desenvolver soluções inovadoras e envolventes.</p>
+<p>Encontro-me atualmente a finalizar o último ano da Licenciatura em Design e Multimédia na Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC),
+ onde tenho vindo a aprofundar competências que aliam tecnologia e design, aplicadas em projetos relevantes no campo da multimédia.</p></p>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Simulador de Cidade Sustentável (Em Progresso)</h3>
+          <video controls width="90%" >
+  <source src="videos/simulador.mp4" type="video/mp4">
+    O seu navegador não suporta vídeo.</video>
+        
+        <p>Experiência de gestão urbana em ambiente 3D desenvolvida com Blender e Unity. O projeto inclui modelos de fontes de energia renovável, 
+          animação básica de NPCs e suporte para realidade virtual. Tem como foco os desafios relacionados à gestão de recursos para um crescimento sustentável.</p>
+      </div>
+      <div class="project">
+        <h3>Fast & Furious</h3>
+         <div class="carousel">
+    <img src="img/1.png" class="active" alt="Slide 1">
+    <img src="img/2.png" alt="Slide 2">
+    <img src="img/3.png" alt="Slide 3">
+    <img src="img/4.png" alt="Slide 4">
+    <img src="img/5.png" alt="Slide 5">
+    <img src="img/6.png" alt="Slide 6">
+    <img src="img/7.png" alt="Slide 7">
+    <img src="img/8.png" alt="Slide 8">
+    <img src="img/9.png" alt="Slide 9">
+    <img src="img/10.png" alt="Slide 10">
+    <img src="img/11.png" alt="Slide 11">
+    <img src="img/12.png" alt="Slide 12">
+    <img src="img/13.png" alt="Slide 13">
+    <img src="img/14.png" alt="Slide 14">
+    <img src="img/15.png" alt="Slide 15">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+        
+        <p>Website de simulação de aluguer de carros, com integração de base de dados utilizando a linguagem PHP e gestão da base de dados através do PgAdmin, (que se pode verificar na última imagem do carrossel).
+O projeto focou-se na lógica do lado do servidor e na conectividade com a base de dados, não sendo consideradas tecnologias de front-end nos critérios de avaliação.</p>
+      </div>
+      <div class="project">
+        <h3>The Great Automatic Grammatizator</h3>
+         <video controls muted onvolumechange="this.muted = true;" width="90%">
+  <source src="videos/maquina.mp4" type="video/mp4">
+  O seu navegador não suporta vídeo.
+</video>
+
+        
+        <p>Projeto web interativo baseado no livro "The Great Automatic Grammatizator" de Roald Dahl.
+Combina animação 3D com geração de narrativas através da API da OpenAI.
+Explora temas como criatividade, automatização e interação com o utilizador.</p>
+      </div>
+    <div class="project">
+        <h3>The Last Cigar</h3>
+        <video controls width="90%" >
+  <source src="videos/Cigar.mov" type="video/mp4">
+    O seu navegador não suporta vídeo.</video>
+        
+        <p>Curta-metragem desenvolvida no âmbito da unidade curricular de Produção Audiovisual.
+Com foco na escrita de argumento, criação de storyboard e composição de cenas, incluindo estrutura de diálogos, 
+enquadramento de câmara e ritmo narrativo para construção de tensão dramática.</p>
+      </div>
+      <div class="project">
+        <h3>Verdade</h3>
+          <video controls width="90%" >
+  <source src="videos/P2.mov" type="video/mp4">
+    O seu navegador não suporta vídeo.</video>
+        
+        <p> A curta-metragem é uma curta-metragem inspirada na cor verde, símbolo de liberdade e esperança. Num cenário marcado pela opressão,
+           um encontro inesperado entre um jovem revolucionário e um motorista transforma-se numa confissão sobre a luta por mudança.
+            A cor verde guia visual e simbolicamente a narrativa, representando a força de um futuro por construir.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contactos">
+    <h2>Contactos</h2>
+    <p>Email: <a href="mailto:vicentemota04@gmail.com">vicentemota04@gmail.com</a></p>
+    <p>Telémovel: (+351) 933698181 </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Vicente Mota. Todos os direitos reservados.
+  </footer>
+
+<script>
+  const carousels = document.querySelectorAll('.carousel');
+
+  carousels.forEach(carousel => {
+    const images = carousel.querySelectorAll('img');
+    let current = 0;
+
+    const showImage = (index) => {
+      images.forEach(img => img.classList.remove('active'));
+      images[index].classList.add('active');
+    };
+
+    carousel.querySelector('.next').addEventListener('click', () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    });
+
+    carousel.querySelector('.prev').addEventListener('click', () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    });
+
+    showImage(current); // inicializa
+  });
+</script>
+
+</body>
+</html>
