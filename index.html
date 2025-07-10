@@ -9,51 +9,53 @@
 @font-face {
     font-family: Jost;
     src: url('fontes/Jost.ttf') format('truetype');
-    
 }
 
-    body {
-      margin: 0;
-      font-family:Jost;
-      line-height: 1.6;
-      color: #fff;
-      background: linear-gradient(to bottom, #000000, #00233a);
-    }
-    header {
-       
-    
-      color: #fff;
-      text-align: center;
-      padding: 60px 20px;
-      border-radius: 2% ;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      
-    }
+body {
+  margin: 0;
+  font-family: Jost, sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background: linear-gradient(to bottom, #000000, #00233a);
+}
 
-    h2{
-      color: #a4e4fa;
-    }
+header {
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 2% ;
+}
 
-    section p{
-font-size: 1.2rem;
-    }
-    .projects {
-     display: flex;
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: #a4e4fa;
+}
+
+section p {
+  font-size: 1.2rem;
+}
+
+.projects {
+  display: flex;
   flex-direction: column;
-      gap: 20px;
-    }
-    .project {
+  gap: 20px;
+}
+
+.project {
   display: flex;
   flex-direction: column;
   gap: 20px; /* espaço entre vídeo e texto */
@@ -61,40 +63,42 @@ font-size: 1.2rem;
   color: #00233a;
   border: 1px solid #ddd;
   border-radius: 30px;
-   background: linear-gradient(to bottom, #a4e4fa, #ffffff);
+  background: linear-gradient(to bottom, #a4e4fa, #ffffff);
   align-items: flex-start; /* alinha topo do vídeo e texto */
 }
-    
-    .project img, .project video, .project iframe{
-      width: 90%;
-        border-radius: 30px;
+
+.project img, 
+.project video, 
+.project iframe {
+  width: 90%;
+  border-radius: 30px;
   flex-shrink: 0; /* impede que o vídeo diminua */
-    display: block;
+  display: block;
   margin: 0 auto;
-    }
-    
+}
+
 .project > div {
   flex: 1; /* faz o texto ocupar o espaço restante */
 }
 
-
 .project h3,
 .project p {
-
   margin-left: 5%;
   margin-right: 5%;
   text-align: left; 
 }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    a {
-      color: #007bff;
-      text-decoration: none;
-    }
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
 
 .carousel {
   position: relative;
@@ -116,7 +120,7 @@ font-size: 1.2rem;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #00233a ;
+  background-color: #00233a;
   width: 40px;
   height: 40px;
   color: white;
@@ -125,10 +129,12 @@ font-size: 1.2rem;
   cursor: pointer;
   border-radius: 50%;
   font-size: 18px;
+  transition: transform 0.3s ease;
 }
-.carousel button:hover{
-  transform: scale(1.2rem);
-  background-color: #00233a(0,0,0,0.5) ;
+
+.carousel button:hover {
+  transform: scale(1.2);
+  background-color: rgba(0, 35, 58, 0.8);
 }
 
 .carousel button.prev {
@@ -137,6 +143,85 @@ font-size: 1.2rem;
 
 .carousel button.next {
   right: 10px;
+}
+
+/* Responsividade */
+
+/* Para tablets e telas médias */
+@media (max-width: 768px) {
+  header {
+    padding: 40px 10px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+  
+  section {
+    padding: 40px 15px;
+    max-width: 90%;
+  }
+
+  .project {
+    padding: 15px;
+  }
+  
+  .project img,
+  .project video,
+  .project iframe {
+    width: 100%;
+  }
+}
+
+/* Para telemóveis */
+@media (max-width: 480px) {
+  
+  header {
+    padding: 30px 10px;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 30px 10px;
+    max-width: 95%;
+  }
+
+  /* Ajusta a imagem sobre mim para ficar centralizada e responsiva */
+  #sobre img {
+    float: none !important;
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Ajusta o texto do "Sobre mim" para ficar mais legível */
+  #sobre p {
+    font-size: 1rem;
+  }
+
+  /* Carousel ajustado para o tamanho do ecrã */
+  .carousel {
+    max-width: 100%;
+  }
+
+  .carousel button {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
 }
 
   </style>
@@ -149,19 +234,20 @@ font-size: 1.2rem;
 
   <section id="sobre">
     <h2>Sobre Mim</h2>
-     <div style="overflow: hidden;">
-    <img src="img/vicente4.jpg" alt="Vicente Mota" style="
-      float: left;
-      width: 400px;
-       height: 250px;
-      object-fit: cover;
-      margin-right: 20px;
-      border-radius: 10px;
-    ">
-    <p style="margin-top: 0;">Sou um designer dedicado à criação de experiências web interativas, ambientes 3D imersivos e interfaces baseadas em jogos. 
+    <div style="overflow: hidden;">
+      <img src="img/vicente4.jpg" alt="Vicente Mota" style="
+        float: left;
+        width: 400px;
+        height: 250px;
+        object-fit: cover;
+        margin-right: 20px;
+        border-radius: 10px;
+      ">
+      <p style="margin-top: 0;">Sou um designer dedicado à criação de experiências web interativas, ambientes 3D imersivos e interfaces baseadas em jogos. </p>
       <p>O meu trabalho foca-se na convergência entre programação, criatividade e interação do utilizador, com o objetivo de desenvolver soluções inovadoras e envolventes.</p>
-<p>Encontro-me atualmente a finalizar o último ano da Licenciatura em Design e Multimédia na Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC),
- onde tenho vindo a aprofundar competências que aliam tecnologia e design, aplicadas em projetos relevantes no campo da multimédia.</p></p>
+      <p>Encontro-me atualmente a finalizar o último ano da Licenciatura em Design e Multimédia na Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC),
+         onde tenho vindo a aprofundar competências que aliam tecnologia e design, aplicadas em projetos relevantes no campo da multimédia.</p>
+    </div>
   </section>
 
   <section id="projetos">
@@ -170,69 +256,63 @@ font-size: 1.2rem;
       <div class="project">
         <h3>Simulador de Cidade Sustentável (Em Progresso)</h3>
           <iframe src="https://drive.google.com/file/d/1IPBsCdArBJRDa-4XbPRRCTM_NqiDTaFV/preview" width="90%" height="480" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        
         <p>Experiência de gestão urbana em ambiente 3D desenvolvida com Blender e Unity. O projeto inclui modelos de fontes de energia renovável, 
           animação básica de NPCs e suporte para realidade virtual. Tem como foco os desafios relacionados à gestão de recursos para um crescimento sustentável.</p>
       </div>
       <div class="project">
         <h3>Fast & Furious</h3>
-         <div class="carousel">
-    <img src="img/1.png" class="active" alt="Slide 1">
-    <img src="img/2.png" alt="Slide 2">
-    <img src="img/3.png" alt="Slide 3">
-    <img src="img/4.png" alt="Slide 4">
-    <img src="img/5.png" alt="Slide 5">
-    <img src="img/6.png" alt="Slide 6">
-    <img src="img/7.png" alt="Slide 7">
-    <img src="img/8.png" alt="Slide 8">
-    <img src="img/9.png" alt="Slide 9">
-    <img src="img/10.png" alt="Slide 10">
-    <img src="img/11.png" alt="Slide 11">
-    <img src="img/12.png" alt="Slide 12">
-    <img src="img/13.png" alt="Slide 13">
-    <img src="img/14.png" alt="Slide 14">
-    <img src="img/15.png" alt="Slide 15">
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-  </div>
-        
+        <div class="carousel">
+          <img src="img/1.png" class="active" alt="Slide 1">
+          <img src="img/2.png" alt="Slide 2">
+          <img src="img/3.png" alt="Slide 3">
+          <img src="img/4.png" alt="Slide 4">
+          <img src="img/5.png" alt="Slide 5">
+          <img src="img/6.png" alt="Slide 6">
+          <img src="img/7.png" alt="Slide 7">
+          <img src="img/8.png" alt="Slide 8">
+          <img src="img/9.png" alt="Slide 9">
+          <img src="img/10.png" alt="Slide 10">
+          <img src="img/11.png" alt="Slide 11">
+          <img src="img/12.png" alt="Slide 12">
+          <img src="img/13.png" alt="Slide 13">
+          <img src="img/14.png" alt="Slide 14">
+          <img src="img/15.png" alt="Slide 15">
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+        </div>
         <p>Website de simulação de aluguer de carros, com integração de base de dados utilizando a linguagem PHP e gestão da base de dados através do PgAdmin, (que se pode verificar na última imagem do carrossel).
-O projeto focou-se na lógica do lado do servidor e na conectividade com a base de dados, não sendo consideradas tecnologias de front-end nos critérios de avaliação.</p>
+          O projeto focou-se na lógica do lado do servidor e na conectividade com a base de dados, não sendo consideradas tecnologias de front-end nos critérios de avaliação.</p>
       </div>
       <div class="project">
         <h3>The Great Automatic Grammatizator</h3>
-         <iframe src="https://drive.google.com/file/d/1oOpPWqzbHAm5REQi8amxlN6P63sEEYlU/preview" width="90%" height="480" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        
+        <iframe src="https://drive.google.com/file/d/1oOpPWqzbHAm5REQi8amxlN6P63sEEYlU/preview" width="90%" height="480" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <p>Projeto web interativo baseado no livro "The Great Automatic Grammatizator" de Roald Dahl.
-Combina animação 3D com geração de narrativas através da API da OpenAI.
-Explora temas como criatividade, automatização e interação com o utilizador.</p>
+          Combina animação 3D com geração de narrativas através da API da OpenAI.
+          Explora temas como criatividade, automatização e interação com o utilizador.</p>
       </div>
-    <div class="project">
+      <div class="project">
         <h3>The Last Cigar</h3>
         <iframe src="https://drive.google.com/file/d/1a5E7N8plCsuQH3drEPKHJcNxhPxkgdKW/preview" width="90%" height="480" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-        
         <p>Curta-metragem desenvolvida no âmbito da unidade curricular de Produção Audiovisual.
-Com foco na escrita de argumento, criação de storyboard e composição de cenas, incluindo estrutura de diálogos, 
-enquadramento de câmara e ritmo narrativo para construção de tensão dramática.</p>
+          Com foco na escrita de argumento, criação de storyboard e composição de cenas, incluindo estrutura de diálogos, 
+          enquadramento de câmara e ritmo narrativo para construção de tensão dramática.</p>
       </div>
       <div class="project">
         <h3>Verdade</h3>
-           <iframe src="https://drive.google.com/file/d/1VmM8Y0uMVJeHmzdZfSi870rk9wLiYzfL/preview" width="90%" height="480" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        
-        <p> A curta-metragem é uma curta-metragem inspirada na cor verde, símbolo de liberdade e esperança. Num cenário marcado pela opressão,
-           um encontro inesperado entre um jovem revolucionário e um motorista transforma-se numa confissão sobre a luta por mudança.
-            A cor verde guia visual e simbolicamente a narrativa, representando a força de um futuro por construir.</p>
+        <iframe src="https://drive.google.com/file/d/1VmM8Y0uMVJeHmzdZfSi870rk9wLiYzfL/preview" width="90%" height="480" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>A curta-metragem é uma curta-metragem inspirada na cor verde, símbolo de liberdade e esperança. Num cenário marcado pela opressão,
+          um encontro inesperado entre um jovem revolucionário e um motorista transforma-se numa confissão sobre a luta por mudança.
+          A cor verde guia visual e simbolicamente a narrativa, representando a força de um futuro por construir.</p>
       </div>
       <div class="project">
         <h3>Sala 3D Animada</h3>
-           <video controls width="90%" >
-  <source src="videos/sala.mp4" type="video/mp4">
-    O seu navegador não suporta vídeo.</video>
-        
-        <p> Este projeto teve como objetivo aplicar conceitos avançados de computação gráfica, nomeadamente texturas e animação,
-           através da criação de um cenário livre no Blender. A partir de modelos fornecidos, o trabalho envolve composição, aplicação de texturas e animação,
-            culminando numa curta de 20 a 25 segundos.</p>
+        <video controls width="90%" >
+          <source src="videos/sala.mp4" type="video/mp4">
+          O seu navegador não suporta vídeo.
+        </video>
+        <p>Este projeto teve como objetivo aplicar conceitos avançados de computação gráfica, nomeadamente texturas e animação,
+          através da criação de um cenário livre no Blender. A partir de modelos fornecidos, o trabalho envolve composição, aplicação de texturas e animação,
+          culminando numa curta de 20 a 25 segundos.</p>
       </div>
     </div>
   </section>
@@ -260,18 +340,4 @@ enquadramento de câmara e ritmo narrativo para construção de tensão dramáti
     };
 
     carousel.querySelector('.next').addEventListener('click', () => {
-      current = (current + 1) % images.length;
-      showImage(current);
-    });
-
-    carousel.querySelector('.prev').addEventListener('click', () => {
-      current = (current - 1 + images.length) % images.length;
-      showImage(current);
-    });
-
-    showImage(current); // inicializa
-  });
-</script>
-
-</body>
-</html>
+      current = (current + 1) % images.length
