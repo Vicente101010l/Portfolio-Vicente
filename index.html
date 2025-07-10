@@ -339,5 +339,19 @@ a {
       images[index].classList.add('active');
     };
 
-    carousel.querySelector('.next').addEventListener('click', () => {
-      current = (current + 1) % images.length
+     carousel.querySelector('.next').addEventListener('click', () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    });
+
+    carousel.querySelector('.prev').addEventListener('click', () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    });
+
+    showImage(current); // inicializa
+  });
+</script>
+
+</body>
+</html>
