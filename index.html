@@ -5,10 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio Vicente Mota</title>
   <style>
-
 @font-face {
-    font-family: Jost;
-    src: url('fontes/Jost.ttf') format('truetype');
+  font-family: Jost;
+  src: url('fontes/Jost.ttf') format('truetype');
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInImage {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 body {
@@ -17,13 +32,15 @@ body {
   line-height: 1.6;
   color: #fff;
   background: linear-gradient(to bottom, #000000, #00233a);
+  animation: fadeIn 1.5s ease;
 }
 
 header {
   color: #fff;
   text-align: center;
   padding: 60px 20px;
-  border-radius: 2% ;
+  border-radius: 2%;
+  animation: fadeIn 2s ease;
 }
 
 header h1 {
@@ -58,13 +75,21 @@ section p {
 .project {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* espaço entre vídeo e texto */
+  gap: 20px;
   padding: 20px;
   color: #00233a;
   border: 1px solid #ddd;
   border-radius: 30px;
   background: linear-gradient(to bottom, #a4e4fa, #ffffff);
-  align-items: flex-start; /* alinha topo do vídeo e texto */
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.project.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project img, 
@@ -72,13 +97,13 @@ section p {
 .project iframe {
   width: 90%;
   border-radius: 30px;
-  flex-shrink: 0; /* impede que o vídeo diminua */
+  flex-shrink: 0;
   display: block;
   margin: 0 auto;
 }
 
 .project > div {
-  flex: 1; /* faz o texto ocupar o espaço restante */
+  flex: 1;
 }
 
 .project h3,
@@ -88,11 +113,21 @@ section p {
   text-align: left; 
 }
 
+#sobre img {
+  float: left;
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 10px;
+  animation: fadeInImage 1.5s ease;
+}
+
 footer {
   background: #222;
   color: #fff;
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 10px;
 }
 
 a {
@@ -110,10 +145,12 @@ a {
   width: 100%;
   border-radius: 8px;
   display: none;
+  transition: opacity 0.5s ease;
 }
 
 .carousel img.active {
   display: block;
+  opacity: 1;
 }
 
 .carousel button {
@@ -146,8 +183,6 @@ a {
 }
 
 /* Responsividade */
-
-/* Para tablets e telas médias */
 @media (max-width: 768px) {
   header {
     padding: 40px 10px;
@@ -177,9 +212,7 @@ a {
   }
 }
 
-/* Para telemóveis */
 @media (max-width: 480px) {
-  
   header {
     padding: 30px 10px;
   }
@@ -197,7 +230,6 @@ a {
     max-width: 95%;
   }
 
-  /* Ajusta a imagem sobre mim para ficar centralizada e responsiva */
   #sobre img {
     float: none !important;
     display: block;
@@ -206,13 +238,11 @@ a {
     height: auto;
     border-radius: 10px;
   }
-  
-  /* Ajusta o texto do "Sobre mim" para ficar mais legível */
+
   #sobre p {
     font-size: 1rem;
   }
 
-  /* Carousel ajustado para o tamanho do ecrã */
   .carousel {
     max-width: 100%;
   }
@@ -223,30 +253,21 @@ a {
     font-size: 16px;
   }
 }
-
   </style>
 </head>
 <body>
   <header>
     <h1>Vicente Mota Portfólio</h1>
-    <p>Desenvolvedor | Designer | 3D | Projetos Interativos  </p>
+    <p>Desenvolvedor | Designer | 3D | Projetos Interativos</p>
   </header>
 
   <section id="sobre">
     <h2>Sobre Mim</h2>
     <div style="overflow: hidden;">
-      <img src="img/vicente4.jpg" alt="Vicente Mota" style="
-        float: left;
-        width: 400px;
-        height: 250px;
-        object-fit: cover;
-        margin-right: 20px;
-        border-radius: 10px;
-      ">
-      <p style="margin-top: 0;">Sou um designer dedicado à criação de experiências web interativas, ambientes 3D imersivos e interfaces baseadas em jogos. </p>
+      <img src="img/vicente4.jpg" alt="Vicente Mota">
+      <p>Sou um designer dedicado à criação de experiências web interativas, ambientes 3D imersivos e interfaces baseadas em jogos. </p>
       <p>O meu trabalho foca-se na convergência entre programação, criatividade e interação do utilizador, com o objetivo de desenvolver soluções inovadoras e envolventes.</p>
-      <p>Encontro-me atualmente a finalizar o último ano da Licenciatura em Design e Multimédia na Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC),
-         onde tenho vindo a aprofundar competências que aliam tecnologia e design, aplicadas em projetos relevantes no campo da multimédia.</p>
+      <p>Encontro-me atualmente a finalizar o último ano da Licenciatura em Design e Multimédia na Faculdade de Ciências e Tecnologia da Universidade de Coimbra (FCTUC), onde tenho vindo a aprofundar competências que aliam tecnologia e design, aplicadas em projetos relevantes no campo da multimédia.</p>
     </div>
   </section>
 
@@ -300,7 +321,7 @@ a {
       <div class="project">
         <h3>Verdade</h3>
         <iframe src="https://drive.google.com/file/d/1VmM8Y0uMVJeHmzdZfSi870rk9wLiYzfL/preview" width="90%" height="480" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <p>A curta-metragem é uma curta-metragem inspirada na cor verde, símbolo de liberdade e esperança. Num cenário marcado pela opressão,
+        <p>A curta-metragem é inspirada na cor verde, símbolo de liberdade e esperança. Num cenário marcado pela opressão,
           um encontro inesperado entre um jovem revolucionário e um motorista transforma-se numa confissão sobre a luta por mudança.
           A cor verde guia visual e simbolicamente a narrativa, representando a força de um futuro por construir.</p>
       </div>
@@ -317,7 +338,7 @@ a {
     </div>
   </section>
 
-  <section id="contactos">
+   <section id="contactos">
     <h2>Contactos</h2>
     <p>Email: <a href="mailto:vicentemota04@gmail.com">vicentemota04@gmail.com</a></p>
     <p>Telémovel: (+351) 933698181 </p>
@@ -327,31 +348,46 @@ a {
     &copy; 2025 Vicente Mota. Todos os direitos reservados.
   </footer>
 
-<script>
-  const carousels = document.querySelectorAll('.carousel');
+  <script>
+    // Carousel (se tiveres um)
+    const nextBtn = document.querySelector(".carousel .next");
+    const prevBtn = document.querySelector(".carousel .prev");
+    const slides = document.querySelectorAll(".carousel img");
 
-  carousels.forEach(carousel => {
-    const images = carousel.querySelectorAll('img');
-    let current = 0;
+    if (nextBtn && prevBtn && slides.length > 0) {
+      let current = 0;
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active");
+          if (i === index) slide.classList.add("active");
+        });
+      }
 
-    const showImage = (index) => {
-      images.forEach(img => img.classList.remove('active'));
-      images[index].classList.add('active');
-    };
+      nextBtn.addEventListener("click", () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      });
 
-     carousel.querySelector('.next').addEventListener('click', () => {
-      current = (current + 1) % images.length;
-      showImage(current);
+      prevBtn.addEventListener("click", () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+      });
+
+      showSlide(current);
+    }
+
+    // Intersection Observer para animação dos projetos
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
     });
 
-    carousel.querySelector('.prev').addEventListener('click', () => {
-      current = (current - 1 + images.length) % images.length;
-      showImage(current);
-    });
-
-    showImage(current); // inicializa
-  });
-</script>
-
+    document.querySelectorAll('.project').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
